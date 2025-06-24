@@ -20,16 +20,11 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
           <div className="flex justify-center mb-4 relative">
             <div className="w-24 h-24 flex items-center justify-center relative">
               <img 
-                src="/lovable-uploads/1541bf71-d748-4b3f-9a15-bd6b2fc90d09.png" 
+                src="/lovable-uploads/62f6ea3f-c901-4796-afb1-0775a1fe95e4.png" 
                 alt="Альфа-Смарт приз" 
                 className="w-20 h-20 object-contain"
               />
-              <div className="absolute -top-2 -left-2 text-purple-400 text-2xl">✨</div>
-              <div className="absolute -top-1 -right-3 text-yellow-400 text-xl">✨</div>
             </div>
-            <div className="absolute right-16 top-8 text-green-400 text-lg">💸</div>
-            <div className="absolute left-16 bottom-2 text-blue-500 text-xl">🎁</div>
-            <div className="absolute right-20 bottom-0 text-green-400 text-sm">💎</div>
           </div>
           
           <h2 className="text-lg font-semibold text-gray-900 mb-1">Альфа-Смарт</h2>
@@ -54,7 +49,7 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <img 
                 src="/lovable-uploads/c93bdeed-d8c6-4e08-a43d-b28cf6854280.png" 
                 alt="Продукты" 
-                className="w-8 h-8 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
           </div>
@@ -70,7 +65,7 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <img 
                 src="/lovable-uploads/b2cafc63-e14c-4165-8dbb-ff4c7aa8d006.png" 
                 alt="Барабан суперкэшбэка" 
-                className="w-8 h-8 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
           </div>
@@ -85,7 +80,7 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <img 
                 src="/lovable-uploads/93a3b8d0-4d45-41d3-85de-310a11ad6f51.png" 
                 alt="Эксклюзивный кэшбэк" 
-                className="w-8 h-8 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
           </div>
@@ -102,7 +97,7 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <img 
                 src="/lovable-uploads/83332796-49cb-4ee8-a140-b1cd5915765f.png" 
                 alt="Увеличенный лимит" 
-                className="w-8 h-8 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
           </div>
@@ -118,7 +113,7 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <img 
                 src="/lovable-uploads/f0275fd5-f21a-4f9b-8a02-c5e799220031.png" 
                 alt="Процент по счёту" 
-                className="w-8 h-8 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
           </div>

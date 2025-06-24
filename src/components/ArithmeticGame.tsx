@@ -13,18 +13,8 @@ const ArithmeticGame = () => {
     const numbers = [75, 39, 8, 36];
     const correctAnswer = numbers.reduce((sum, num) => sum + num, 0);
     
-    // Generate 3 wrong answers
-    const wrongAnswers = [];
-    while (wrongAnswers.length < 3) {
-      const offset = Math.floor(Math.random() * 20) - 10; // -10 to +10
-      const wrongAnswer = correctAnswer + offset;
-      if (wrongAnswer !== correctAnswer && wrongAnswer > 0 && !wrongAnswers.includes(wrongAnswer)) {
-        wrongAnswers.push(wrongAnswer);
-      }
-    }
-    
-    // Shuffle options
-    const options = [correctAnswer, ...wrongAnswers].sort(() => Math.random() - 0.5);
+    // New answer options from user request
+    const options = [164, 113, 158, 141];
     
     return {
       numbers,
