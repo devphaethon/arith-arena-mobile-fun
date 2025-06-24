@@ -43,7 +43,7 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
         <h3 className="text-lg font-semibold text-gray-900 mb-4 ml-2">В вашей подписке</h3>
         
         <div className="space-y-3">
-          {/* Benefit 1 */}
+          {/* Benefit 1 - Shopping cart */}
           <div className="bg-gray-100 rounded-2xl p-4 flex items-center">
             <div className="flex-1">
               <h4 className="font-medium text-gray-900 mb-1">Кэшбэк 5% в категории Продукты</h4>
@@ -51,11 +51,15 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <p className="text-sm text-gray-600">каждый месяц</p>
             </div>
             <div className="ml-4">
-              <ShoppingCart className="w-8 h-8 text-red-500" />
+              <img 
+                src="/lovable-uploads/c93bdeed-d8c6-4e08-a43d-b28cf6854280.png" 
+                alt="Продукты" 
+                className="w-8 h-8 object-contain"
+              />
             </div>
           </div>
 
-          {/* Benefit 2 */}
+          {/* Benefit 2 - Wheel */}
           <div className="bg-gray-100 rounded-2xl p-4 flex items-center">
             <div className="flex-1">
               <h4 className="font-medium text-gray-900 mb-1">+1 попытка крутить барабан суперкэшбэка</h4>
@@ -63,22 +67,30 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <p className="text-sm text-gray-600">в случайной категории</p>
             </div>
             <div className="ml-4">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 via-yellow-400 to-green-500"></div>
+              <img 
+                src="/lovable-uploads/b2cafc63-e14c-4165-8dbb-ff4c7aa8d006.png" 
+                alt="Барабан суперкэшбэка" 
+                className="w-8 h-8 object-contain"
+              />
             </div>
           </div>
 
-          {/* Benefit 3 */}
+          {/* Benefit 3 - Lightning */}
           <div className="bg-gray-100 rounded-2xl p-4 flex items-center">
             <div className="flex-1">
               <h4 className="font-medium text-gray-900 mb-1">Эксклюзивный кэшбэк от партнёров</h4>
               <p className="text-sm text-gray-600">Доступ к особой подборке</p>
             </div>
             <div className="ml-4">
-              <Zap className="w-8 h-8 text-red-500" />
+              <img 
+                src="/lovable-uploads/93a3b8d0-4d45-41d3-85de-310a11ad6f51.png" 
+                alt="Эксклюзивный кэшбэк" 
+                className="w-8 h-8 object-contain"
+              />
             </div>
           </div>
 
-          {/* Benefit 4 */}
+          {/* Benefit 4 - Wallet */}
           <div className="bg-gray-100 rounded-2xl p-4 flex items-center">
             <div className="flex-1">
               <h4 className="font-medium text-gray-900 mb-1">Увеличенный лимит кэшбэка</h4>
@@ -87,11 +99,15 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <p className="text-sm text-gray-600">в категориях</p>
             </div>
             <div className="ml-4">
-              <CreditCard className="w-8 h-8 text-red-500" />
+              <img 
+                src="/lovable-uploads/83332796-49cb-4ee8-a140-b1cd5915765f.png" 
+                alt="Увеличенный лимит" 
+                className="w-8 h-8 object-contain"
+              />
             </div>
           </div>
 
-          {/* Benefit 5 */}
+          {/* Benefit 5 - Ruble coin */}
           <div className="bg-gray-100 rounded-2xl p-4 flex items-center">
             <div className="flex-1">
               <h4 className="font-medium text-gray-900 mb-1">+3% годовых</h4>
@@ -99,14 +115,11 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
               <p className="text-sm text-gray-600">Счёту на ежедневный остаток</p>
             </div>
             <div className="ml-4">
-              <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">₽</span>
-                <div className="absolute ml-4 mt-4">
-                  <div className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">+</span>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/f0275fd5-f21a-4f9b-8a02-c5e799220031.png" 
+                alt="Процент по счёту" 
+                className="w-8 h-8 object-contain"
+              />
             </div>
           </div>
         </div>
