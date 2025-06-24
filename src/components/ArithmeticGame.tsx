@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
+import PrizeScreen from './PrizeScreen';
 
 interface Question {
   numbers: number[];
@@ -35,6 +35,7 @@ const ArithmeticGame = () => {
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [showPrizeScreen, setShowPrizeScreen] = useState(false);
 
   const handleAnswerSelect = (answer: number) => {
     if (selectedAnswer !== null) return;
@@ -50,9 +51,17 @@ const ArithmeticGame = () => {
   };
 
   const collectPrize = () => {
-    alert('Поздравляем! Вы выиграли приз!');
+    setShowPrizeScreen(true);
+  };
+
+  const closePrizeScreen = () => {
+    setShowPrizeScreen(false);
     resetGame();
   };
+
+  if (showPrizeScreen) {
+    return <PrizeScreen onClose={closePrizeScreen} />;
+  }
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
