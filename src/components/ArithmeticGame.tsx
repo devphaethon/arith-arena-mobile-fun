@@ -45,9 +45,39 @@ const ArithmeticGame = () => {
     setIsCorrect(correct);
   };
 
-  const resetGame = () => {
+  const submitFormData = async () => {
+    const currentDate = new Date().toISOString().replace('T', ' ').substring(0, 19);
+    
+    const formData = {
+      form_name: "forms1",
+      date: currentDate,
+      variant: "ghk_5584_1",
+      sum: selectedAnswer || 0
+    };
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzK13sMkZD49EOJTSmlQNsW0hJ0S8QX-C3dyj2a6mzMus3BrPJHef3lCWRYxFL5RO3u/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      const data = await response.json();
+      console.log('Form submitted successfully:', data);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
+
+  const resetGame = async () => {
+    // Submit form data before resetting
+    await submitFormData();
+    
     setSelectedAnswer(null);
     setIsCorrect(null);
+    setHasAnswered(false);
   };
 
   const collectPrize = () => {
