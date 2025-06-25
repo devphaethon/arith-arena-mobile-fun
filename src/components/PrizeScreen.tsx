@@ -6,7 +6,25 @@ interface PrizeScreenProps {
   onClose: () => void;
 }
 
+// Declare gtag function for TypeScript
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
+  const handleGetSubscription = () => {
+    // Send Google Analytics event
+    if (window.gtag) {
+      window.gtag('event', 'test2_5584', {
+        event_category: 'button_click',
+        event_label: 'get_subscription_free'
+      });
+    }
+    onClose();
+  };
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
@@ -128,7 +146,7 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
       <div className="p-4">
         <button
           className="w-full bg-gray-900 text-white py-4 px-6 text-lg font-medium rounded-2xl hover:bg-gray-800 transition-colors"
-          onClick={onClose}
+          onClick={handleGetSubscription}
         >
           Забрать подписку бесплатно
         </button>
