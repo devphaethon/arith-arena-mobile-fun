@@ -9,6 +9,13 @@ interface Question {
   options: number[];
 }
 
+// Declare gtag function for TypeScript
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const ArithmeticGame = () => {
   const [question] = useState<Question>(() => {
     const numbers = [75, 39, 8, 36];
@@ -44,6 +51,13 @@ const ArithmeticGame = () => {
   };
 
   const collectPrize = () => {
+    // Send Google Analytics event
+    if (window.gtag) {
+      window.gtag('event', 'test_5584', {
+        event_category: 'button_click',
+        event_label: 'collect_prize'
+      });
+    }
     setShowPrizeScreen(true);
   };
 
