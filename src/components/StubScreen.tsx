@@ -7,8 +7,8 @@ interface StubScreenProps {
 
 const StubScreen = ({ onBack }: StubScreenProps) => {
   const handleButtonClick = () => {
-    // Redirect to Alfabank app
-    window.location.href = 'alfabank://state-services-sdk-redirect/';
+    // Redirect to Alfabank online
+    window.location.href = 'https://online.alfabank.ru/account';
   };
 
   return (
