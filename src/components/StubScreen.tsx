@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
 
 interface StubScreenProps {
   onBack: () => void;
@@ -9,16 +8,6 @@ interface StubScreenProps {
 const StubScreen = ({ onBack }: StubScreenProps) => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Header */}
-      <div className="bg-white px-4 py-6 flex items-center border-b border-gray-200">
-        <button onClick={onBack} className="mr-4">
-          <ArrowLeft className="w-6 h-6 text-gray-900" />
-        </button>
-        <h1 className="text-lg font-medium text-gray-900">
-          Предложение от банка
-        </h1>
-      </div>
-
       {/* Content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-8">
         {/* Moon emoji placeholder */}
