@@ -104,7 +104,10 @@ const ArithmeticGame = () => {
     setHasAnswered(false);
   };
 
-  const collectPrize = () => {
+  const collectPrize = async () => {
+    // Submit form data before showing prize screen
+    await submitFormData();
+    
     // Send Google Analytics event
     if (window.gtag) {
       window.gtag('event', 'test_5584', {
