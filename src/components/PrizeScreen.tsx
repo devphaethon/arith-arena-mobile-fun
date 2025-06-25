@@ -18,11 +18,11 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
         {/* Prize Card */}
         <div className="bg-gray-100 rounded-2xl p-6 mx-4 mb-6">
           <div className="flex justify-center mb-4 relative">
-            <div className="w-60 h-60 flex items-center justify-center relative">
+            <div className="w-48 h-32 flex items-center justify-center relative">
               <img 
-                src="/lovable-uploads/62f6ea3f-c901-4796-afb1-0775a1fe95e4.png" 
+                src="/lovable-uploads/60ab8a50-30bb-4719-a6e2-65436535f2f5.png" 
                 alt="Альфа-Смарт приз" 
-                className="w-60 h-60 object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
