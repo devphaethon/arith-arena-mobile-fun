@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Gift, ShoppingCart, Zap, CreditCard, TrendingUp } from 'lucide-react';
+import StubScreen from './StubScreen';
 
 interface PrizeScreenProps {
   onClose: () => void;
@@ -14,6 +15,8 @@ declare global {
 }
 
 const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
+  const [showStubScreen, setShowStubScreen] = useState(false);
+
   const handleGetSubscription = () => {
     // Send Google Analytics event
     if (window.gtag) {
@@ -22,8 +25,17 @@ const PrizeScreen = ({ onClose }: PrizeScreenProps) => {
         event_label: 'get_subscription_free'
       });
     }
+    setShowStubScreen(true);
+  };
+
+  const handleBackFromStub = () => {
+    setShowStubScreen(false);
     onClose();
   };
+
+  if (showStubScreen) {
+    return <StubScreen onBack={handleBackFromStub} />;
+  }
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
