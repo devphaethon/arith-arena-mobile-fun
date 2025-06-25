@@ -55,19 +55,43 @@ const ArithmeticGame = () => {
       sum: selectedAnswer || 0
     };
 
+    console.log('Submitting form data:', formData);
+
     try {
       const response = await fetch('https://script.google.com/macros/s/AKfycbzK13sMkZD49EOJTSmlQNsW0hJ0S8QX-C3dyj2a6mzMus3BrPJHef3lCWRYxFL5RO3u/exec', {
         method: 'POST',
+        mode: 'no-cors',
         body: JSON.stringify(formData),
         headers: {
           'Content-Type': 'application/json'
         }
       });
       
-      const data = await response.json();
-      console.log('Form submitted successfully:', data);
+      console.log('Form submission response status:', response.status);
+      console.log('Form submitted successfully');
     } catch (error) {
       console.error('Error submitting form:', error);
+      
+      // Fallback: try with form data instead of JSON
+      try {
+        const formDataFallback = new FormData();
+        formDataFallback.append('form_name', 'forms1');
+        formDataFallback.append('date', currentDate);
+        formDataFallback.append('variant', 'ghk_5584_1');
+        formDataFallback.append('sum', String(selectedAnswer || 0));
+        
+        console.log('Trying fallback form submission');
+        
+        const fallbackResponse = await fetch('https://script.google.com/macros/s/AKfycbzK13sMkZD49EOJTSmlQNsW0hJ0S8QX-C3dyj2a6mzMus3BrPJHef3lCWRYxFL5RO3u/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formDataFallback
+        });
+        
+        console.log('Fallback form submission completed');
+      } catch (fallbackError) {
+        console.error('Fallback form submission also failed:', fallbackError);
+      }
     }
   };
 
