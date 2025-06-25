@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import PrizeScreen from './PrizeScreen';
@@ -26,11 +27,13 @@ const ArithmeticGame = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showPrizeScreen, setShowPrizeScreen] = useState(false);
+  const [hasAnswered, setHasAnswered] = useState(false);
 
   const handleAnswerSelect = (answer: number) => {
     if (selectedAnswer !== null) return;
     
     setSelectedAnswer(answer);
+    setHasAnswered(true);
     const correct = answer === question.correctAnswer;
     setIsCorrect(correct);
   };
@@ -132,15 +135,14 @@ const ArithmeticGame = () => {
           >
             Забрать приз
           </button>
-        ) : (
+        ) : hasAnswered ? (
           <button
             className="w-full bg-gray-900 text-white py-4 px-6 text-lg font-medium rounded-lg hover:bg-gray-800 transition-colors"
             onClick={resetGame}
-            disabled={selectedAnswer === null}
           >
             Попробовать снова
           </button>
-        )}
+        ) : null}
       </div>
     </div>
   );
