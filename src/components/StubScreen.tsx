@@ -6,6 +6,11 @@ interface StubScreenProps {
 }
 
 const StubScreen = ({ onBack }: StubScreenProps) => {
+  const handleButtonClick = () => {
+    // Redirect to Alfabank app
+    window.location.href = 'alfabank://state-services-sdk-redirect/';
+  };
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Content */}
@@ -28,7 +33,7 @@ const StubScreen = ({ onBack }: StubScreenProps) => {
       <div className="p-6">
         <button
           className="w-full bg-gray-900 text-white py-4 px-6 text-lg font-medium rounded-2xl hover:bg-gray-800 transition-colors"
-          onClick={onBack}
+          onClick={handleButtonClick}
         >
           Спасибо, понятно!
         </button>
